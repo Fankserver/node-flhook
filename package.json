@@ -1,0 +1,16 @@
+{
+	"name": "node-flhook",
+	"version": "0.0.2",
+	"description": "Freelancer Hook client library",
+	"keywords": [
+		"flhook",
+		"freelancer",
+		"hook"
+	],
+	"author": "Florian Kinder <Florian.Kinder@fankserver.com>",
+	"main": "./index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Fankserver/node-flhook.git"
+	}
+}
