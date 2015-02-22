@@ -1,28 +1,28 @@
 {
-  "name": "flhook",
-  "version": "0.1.2",
-  "description": "Freelancer Hook client library",
-  "keywords": [
-    "flhook",
-    "freelancer",
-    "hook"
-  ],
-  "author": "Florian Kinder <Florian.Kinder@fankserver.com>",
-  "main": "./index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Fankserver/node-flhook.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Fankserver/node-flhook/issues"
-  },
-  "homepage": "https://github.com/Fankserver/node-flhook",
-  "directories": {
-    "example": "examples",
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "ISC"
+	"name": "flhook",
+	"version": "0.2.0",
+	"description": "Freelancer Hook client library",
+	"keywords": [
+		"flhook",
+		"freelancer",
+		"hook"
+	],
+	"author": "Florian Kinder <Florian.Kinder@fankserver.com>",
+	"main": "./index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Fankserver/node-flhook.git"
+	},
+		"bugs": {
+		"url": "https://github.com/Fankserver/node-flhook/issues"
+	},
+	"homepage": "https://github.com/Fankserver/node-flhook",
+	"directories": {
+		"example": "examples",
+		"test": "test"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"license": "ISC"
 }
