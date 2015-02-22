@@ -7,25 +7,25 @@ npm install flhook
 ```
 
 ## Usage
-Here a current how to use example:
+Here a simple how to use example:
 ```js
 var flhook = require('flhook');
-var client = flhook.createClient(1919, 'localhost', {
-	password: 'test'
-});
+var client = flhook.createClient();
 
 client.on('ready', function() {
 	console.log('FLHook client is ready to use');
 
-	client.enable_eventmode(function(err) {
+	client.getcash('Fank', function(err, data) {
 		if (err) {
 			console.error(err);
 		}
-
-		client.on('event', function(message) {
-			// message is the event message (found under NOTIFICATIONS in the flhook readme)
-		});
+		else {
+			console.log(data[0]);
+		}
 	});
+});
+console.on('error', function(err) {
+	console.error(err);
 });
 ```
 
@@ -54,167 +54,167 @@ client.on('ready', function() {
 
 The current only supported call is `flhook.createClient(port, host, options)` unless the authentification method is added.
 
-## client.send_command(command, args, callback)
-`command` is the command which will be executed as string. `args` are the arguments as string, multiple args are splited by space. E.g. `client.send_command('setcash', 'Player1 100000', function() {})`.
+## client.execute(args...)
+`args` is the command which will be executed.
 
-## client.enable_eventmode(callback)
+## client.enableEventmode(callback)
 This enabled the eventmode, events will be received via event `event`.
 
 ## client.getcash(args...)
-Predefined call, same as `client.send_command('getcash', args...)`.
+Predefined call, same as `client.execute('getcash', args...)`.
 
 ## client.setcash(args...)
-Predefined call, same as `client.send_command('setcash', args...)`.
+Predefined call, same as `client.execute('setcash', args...)`.
 
 ## client.setcashsec(args...)
-Predefined call, same as `client.send_command('setcashsec', args...)`.
+Predefined call, same as `client.execute('setcashsec', args...)`.
 
 ## client.addcash(args...)
-Predefined call, same as `client.send_command('addcash', args...)`.
+Predefined call, same as `client.execute('addcash', args...)`.
 
 ## client.addcashsec(args...)
-Predefined call, same as `client.send_command('addcashsec', args...)`.
+Predefined call, same as `client.execute('addcashsec', args...)`.
 
 ## client.kick(args...)
-Predefined call, same as `client.send_command('kick', args...)`.
+Predefined call, same as `client.execute('kick', args...)`.
 
 ## client.ban(args...)
-Predefined call, same as `client.send_command('ban', args...)`.
+Predefined call, same as `client.execute('ban', args...)`.
 
 ## client.unban(args...)
-Predefined call, same as `client.send_command('unban', args...)`.
+Predefined call, same as `client.execute('unban', args...)`.
 
 ## client.kickban(args...)
-Predefined call, same as `client.send_command('kickban', args...)`.
+Predefined call, same as `client.execute('kickban', args...)`.
 
 ## client.msg(args...)
-Predefined call, same as `client.send_command('msg', args...)`.
+Predefined call, same as `client.execute('msg', args...)`.
 
 ## client.msgs(args...)
-Predefined call, same as `client.send_command('msgs', args...)`.
+Predefined call, same as `client.execute('msgs', args...)`.
 
 ## client.msgu(args...)
-Predefined call, same as `client.send_command('msgu', args...)`.
+Predefined call, same as `client.execute('msgu', args...)`.
 
 ## client.fmsg(args...)
-Predefined call, same as `client.send_command('fmsg', args...)`.
+Predefined call, same as `client.execute('fmsg', args...)`.
 
 ## client.fmsgs(args...)
-Predefined call, same as `client.send_command('fmsgs', args...)`.
+Predefined call, same as `client.execute('fmsgs', args...)`.
 
 ## client.fmsgu(args...)
-Predefined call, same as `client.send_command('fmsgu', args...)`.
+Predefined call, same as `client.execute('fmsgu', args...)`.
 
 ## client.beam(args...)
-Predefined call, same as `client.send_command('beam', args...)`.
+Predefined call, same as `client.execute('beam', args...)`.
 
 ## client.kill(args...)
-Predefined call, same as `client.send_command('kill', args...)`.
+Predefined call, same as `client.execute('kill', args...)`.
 
 ## client.resetrep(args...)
-Predefined call, same as `client.send_command('resetrep', args...)`.
+Predefined call, same as `client.execute('resetrep', args...)`.
 
 ## client.setrep(args...)
-Predefined call, same as `client.send_command('setrep', args...)`.
+Predefined call, same as `client.execute('setrep', args...)`.
 
 ## client.enumcargo(args...)
-Predefined call, same as `client.send_command('enumcargo', args...)`.
+Predefined call, same as `client.execute('enumcargo', args...)`.
 
 ## client.addcargo(args...)
-Predefined call, same as `client.send_command('addcargo', args...)`.
+Predefined call, same as `client.execute('addcargo', args...)`.
 
 ## client.removecargo(args...)
-Predefined call, same as `client.send_command('removecargo', args...)`.
+Predefined call, same as `client.execute('removecargo', args...)`.
 
 ## client.rename(args...)
-Predefined call, same as `client.send_command('rename', args...)`.
+Predefined call, same as `client.execute('rename', args...)`.
 
 ## client.deletechar(args...)
-Predefined call, same as `client.send_command('deletechar', args...)`.
+Predefined call, same as `client.execute('deletechar', args...)`.
 
 ## client.readcharfile(args...)
-Predefined call, same as `client.send_command('readcharfile', args...)`.
+Predefined call, same as `client.execute('readcharfile', args...)`.
 
 ## client.writecharfile(args...)
-Predefined call, same as `client.send_command('writecharfile', args...)`.
+Predefined call, same as `client.execute('writecharfile', args...)`.
 
 ## client.setadmin(args...)
-Predefined call, same as `client.send_command('setadmin', args...)`.
+Predefined call, same as `client.execute('setadmin', args...)`.
 
 ## client.getadmin(args...)
-Predefined call, same as `client.send_command('getadmin', args...)`.
+Predefined call, same as `client.execute('getadmin', args...)`.
 
 ## client.deladmin(args...)
-Predefined call, same as `client.send_command('deladmin', args...)`.
+Predefined call, same as `client.execute('deladmin', args...)`.
 
 ## client.getreservedslot(args...)
-Predefined call, same as `client.send_command('getreservedslot', args...)`.
+Predefined call, same as `client.execute('getreservedslot', args...)`.
 
 ## client.setreservedslot(args...)
-Predefined call, same as `client.send_command('setreservedslot', args...)`.
+Predefined call, same as `client.execute('setreservedslot', args...)`.
 
 ## client.rehash(args...)
-Predefined call, same as `client.send_command('rehash', args...)`.
+Predefined call, same as `client.execute('rehash', args...)`.
 
 ## client.loadplugins(args...)
-Predefined call, same as `client.send_command('loadplugins', args...)`.
+Predefined call, same as `client.execute('loadplugins', args...)`.
 
 ## client.loadplugin(args...)
-Predefined call, same as `client.send_command('loadplugin', args...)`.
+Predefined call, same as `client.execute('loadplugin', args...)`.
 
 ## client.listplugins(args...)
-Predefined call, same as `client.send_command('listplugins', args...)`.
+Predefined call, same as `client.execute('listplugins', args...)`.
 
 ## client.unloadplugin(args...)
-Predefined call, same as `client.send_command('unloadplugin', args...)`.
+Predefined call, same as `client.execute('unloadplugin', args...)`.
 
 ## client.pauseplugin(args...)
-Predefined call, same as `client.send_command('pauseplugin', args...)`.
+Predefined call, same as `client.execute('pauseplugin', args...)`.
 
 ## client.unpauseplugin(args...)
-Predefined call, same as `client.send_command('unpauseplugin', args...)`.
+Predefined call, same as `client.execute('unpauseplugin', args...)`.
 
 ## client.getgroupmembers(args...)
-Predefined call, same as `client.send_command('getgroupmembers', args...)`.
+Predefined call, same as `client.execute('getgroupmembers', args...)`.
 
 ## client.getbasestatus(args...)
-Predefined call, same as `client.send_command('getbasestatus', args...)`.
+Predefined call, same as `client.execute('getbasestatus', args...)`.
 
 ## client.getclientid(args...)
-Predefined call, same as `client.send_command('getclientid', args...)`.
+Predefined call, same as `client.execute('getclientid', args...)`.
 
 ## client.getplayerinfo(args...)
-Predefined call, same as `client.send_command('getplayerinfo', args...)`.
+Predefined call, same as `client.execute('getplayerinfo', args...)`.
 
 ## client.xgetplayerinfo(args...)
-Predefined call, same as `client.send_command('xgetplayerinfo', args...)`.
+Predefined call, same as `client.execute('xgetplayerinfo', args...)`.
 
 ## client.getplayers(args...)
-Predefined call, same as `client.send_command('getplayers', args...)`.
+Predefined call, same as `client.execute('getplayers', args...)`.
 
 ## client.xgetplayers(args...)
-Predefined call, same as `client.send_command('xgetplayers', args...)`.
+Predefined call, same as `client.execute('xgetplayers', args...)`.
 
 ## client.getplayerids(args...)
-Predefined call, same as `client.send_command('getplayerids', args...)`.
+Predefined call, same as `client.execute('getplayerids', args...)`.
 
 ## client.getaccountdirname(args...)
-Predefined call, same as `client.send_command('getaccountdirname', args...)`.
+Predefined call, same as `client.execute('getaccountdirname', args...)`.
 
 ## client.savechar(args...)
-Predefined call, same as `client.send_command('savechar', args...)`.
+Predefined call, same as `client.execute('savechar', args...)`.
 
 ## client.isloggedin(args...)
-Predefined call, same as `client.send_command('isloggedin', args...)`.
+Predefined call, same as `client.execute('isloggedin', args...)`.
 
 ## client.isonserver(args...)
-Predefined call, same as `client.send_command('isonserver', args...)`.
+Predefined call, same as `client.execute('isonserver', args...)`.
 
 ## client.serverinfo(args...)
-Predefined call, same as `client.send_command('serverinfo', args...)`.
+Predefined call, same as `client.execute('serverinfo', args...)`.
 
 ## client.moneyfixlist(args...)
-Predefined call, same as `client.send_command('moneyfixlist', args...)`.
+Predefined call, same as `client.execute('moneyfixlist', args...)`.
 
 ## client.help(args...)
-Predefined call, same as `client.send_command('help', args...)`.
+Predefined call, same as `client.execute('help', args...)`.
