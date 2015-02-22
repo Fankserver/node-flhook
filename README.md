@@ -1,15 +1,15 @@
-# node-flhook - a node.js/io.js Freelancer Hook client
+# flhook - a node.js/io.js Freelancer Hook client
 This is a work in progress Freelancer Hook client library for node.js/io.js.
 
 Install with:
 ```bash
-npm install node-flhook
+npm install flhook
 ```
 
 ## Usage
 Here a current how to use example:
 ```js
-var flhook = require('node-flhook');
+var flhook = require('flhook');
 var client = flhook.createClient(1919, 'localhost', {
 	password: 'test'
 });
